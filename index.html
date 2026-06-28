@@ -2,270 +2,190 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bautizo Alaia Victoria & Julián André</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bautizo Alaia Victoria & Julián André</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- PORTADA -->
-    <section class="hero">
+  <section class="hero">
+    <div class="overlay">
+      <div class="ornament">✦</div>
 
-        <div class="overlay">
+      <p class="intro">Con la bendición de Dios</p>
 
-            <div class="cross">✝</div>
+      <h1>Bautizo de</h1>
 
-            <p>Con la bendición de Dios</p>
+      <h2>
+        Alaia Victoria
+        <span>&</span>
+        Julián André
+      </h2>
 
-            <h1>Bautizo de</h1>
+      <p class="lastname">Morales Illescas</p>
 
-            <h2>
-                Alaia Victoria
-                <br>
-                &
-                <br>
-                Julián André
-            </h2>
+      <div class="date-box">
+        <span>Domingo</span>
+        <strong>09</strong>
+        <span>Agosto 2026</span>
+      </div>
 
-            <h3>Domingo 09 de Agosto</h3>
+      <button type="button" onclick="scrollToInfo()">
+        Ver invitación
+      </button>
+    </div>
+  </section>
 
-            <button onclick="scrollToInfo()">
-                Ver invitación
-            </button>
+  <section class="message">
+    <p class="section-label">Un día especial</p>
 
-        </div>
+    <h2>Nos encantaría contar con tu presencia</h2>
 
-    </section>
+    <p>
+      Con mucho amor queremos compartir este momento tan importante
+      junto a nuestra familia y amigos.
+    </p>
+  </section>
 
+  <section class="details">
+    <p class="section-label">Información del evento</p>
 
-    <!-- MENSAJE -->
+    <h2>Detalles del Bautizo</h2>
 
-    <section class="message">
+    <div class="card">
+      <p class="card-label">Ceremonia religiosa</p>
 
-        <h2>Una celebración especial</h2>
+      <h3>Church of Saint Christopher and Saint Patrick</h3>
 
-        <p>
-            Con mucho amor queremos compartir este día tan importante
-            junto a nuestra familia y amigos.
-        </p>
+      <p><strong>Hora:</strong> 10:00 AM</p>
 
-    </section>
+      <p>
+        3094 Albany Post Rd<br>
+        Buchanan, NY 10511
+      </p>
 
-
-
-    <!-- DETALLES -->
-
-    <section class="details">
-
-        <h2>Detalles del evento</h2>
-
-        <div class="card">
-
-            <h3>⛪ Misa</h3>
-
-            <p><strong>Hora:</strong> 10:00 AM</p>
-
-            <p>Church of Saint Christopher and Saint Patrick</p>
-
-            <p>
-                3094 Albany Post Rd
-                <br>
-                Buchanan, NY 10511
-            </p>
-
-            <a target="_blank"
-                href="https://www.google.com/maps/search/?api=1&query=3094+Albany+Post+Rd+Buchanan+NY+10511">
-
-                Ver ubicación
-
-            </a>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>🎉 Recepción</h3>
-
-            <p><strong>Hora:</strong> 1:00 PM</p>
-
-            <p>Our Lady of Mt. Carmel Society</p>
-
-            <p>
-                155 Highland Ave
-                <br>
-                Verplanck NY 10596
-            </p>
-
-            <a target="_blank"
-                href="https://www.google.com/maps/search/?api=1&query=155+Highland+Ave+Verplanck+NY+10596">
-
-                Ver ubicación
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- CONFIRMACION -->
-
-    <section class="rsvp" id="confirmacion">
-
-        <h2>Confirma tu asistencia</h2>
-
-        <p>
-            Tu respuesta nos ayudará a preparar este día con mucho cariño.
-        </p>
-
-        <button onclick="openConfirm()">
-
-            Sí, asistiré
-
-        </button>
-
-        <button class="no" onclick="openNoConfirm()">
-
-            No podré asistir
-
-        </button>
-
-    </section>
-
-
-
-    <!-- PADRES -->
-
-    <section class="parents">
-
-        <p>Con cariño</p>
-
-        <h3>
-
-            Verónica Illescas
-            <br>
-            &
-            <br>
-            Darío Morales
-
-        </h3>
-
-    </section>
-
-
-
-
-    <!-- MODAL SI -->
-
-    <div class="modal" id="modal">
-
-        <div class="modal-content">
-
-            <h2>Confirmar asistencia</h2>
-
-            <input
-                type="text"
-                id="nombre"
-                placeholder="Nombre completo">
-
-            <label>
-
-                ¿Cuántas personas asistirán?
-
-            </label>
-
-            <div class="counter">
-
-                <button
-                    type="button"
-                    onclick="changePeople(-1)">
-
-                    -
-
-                </button>
-
-                <span id="personas">
-
-                    1
-
-                </span>
-
-                <button
-                    type="button"
-                    onclick="changePeople(1)">
-
-                    +
-
-                </button>
-
-            </div>
-
-            <button
-                type="button"
-                onclick="saveData()">
-
-                Confirmar
-
-            </button>
-
-            <button
-                type="button"
-                class="close"
-                onclick="closeModal()">
-
-                Cancelar
-
-            </button>
-
-        </div>
-
+      <a
+        target="_blank"
+        href="https://www.google.com/maps/search/?api=1&query=3094+Albany+Post+Rd+Buchanan+NY+10511">
+        Ver ubicación
+      </a>
     </div>
 
+    <div class="card">
+      <p class="card-label">Recepción</p>
 
+      <h3>Our Lady of Mt. Carmel Society</h3>
 
+      <p><strong>Hora:</strong> 1:00 PM</p>
 
-    <!-- MODAL NO -->
+      <p>
+        155 Highland Ave<br>
+        Verplanck, NY 10596
+      </p>
 
-    <div class="modal" id="modalNo">
-
-        <div class="modal-content">
-
-            <h2>No asistiré</h2>
-
-            <input
-                type="text"
-                id="nombreNo"
-                placeholder="Nombre completo">
-
-            <button
-                type="button"
-                onclick="saveNoData()">
-
-                Enviar respuesta
-
-            </button>
-
-            <button
-                type="button"
-                class="close"
-                onclick="closeNoModal()">
-
-                Cancelar
-
-            </button>
-
-        </div>
-
+      <a
+        target="_blank"
+        href="https://www.google.com/maps/search/?api=1&query=155+Highland+Ave+Verplanck+NY+10596">
+        Ver ubicación
+      </a>
     </div>
+  </section>
 
+  <section class="gift">
+    <div class="card">
+      <p class="section-label">Sugerencia de obsequio</p>
 
+      <h2>Tu presencia es nuestro mejor regalo</h2>
 
-    <script src="script.js"></script>
+      <p>
+        Si deseas tener un detalle con Alaia Victoria y Julián André,
+        durante la recepción encontrarás un buzón de sobres donde podrás
+        dejar tu obsequio en efectivo.
+      </p>
+
+      <p>
+        Gracias por acompañarnos y formar parte de este día tan especial.
+      </p>
+    </div>
+  </section>
+
+  <section class="rsvp" id="confirmacion">
+    <p class="section-label">Confirmación</p>
+
+    <h2>Confirma tu asistencia</h2>
+
+    <p>
+      Tu respuesta nos ayudará a preparar este día con mucho cariño.
+    </p>
+
+    <button type="button" onclick="openConfirm()">
+      Sí, asistiré
+    </button>
+
+    <button type="button" class="no" onclick="openNoConfirm()">
+      No podré asistir
+    </button>
+  </section>
+
+  <section class="parents">
+    <p>Con cariño</p>
+
+    <h3>
+      Verónica Illescas
+      <span>&</span>
+      Darío Morales
+    </h3>
+  </section>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2>Confirmar asistencia</h2>
+
+      <input
+        type="text"
+        id="nombre"
+        placeholder="Nombre completo"
+        autocomplete="name">
+
+      <label>
+        ¿Cuántas personas asistirán?
+      </label>
+
+      <div class="counter">
+        <button type="button" onclick="changePeople(-1)">−</button>
+        <span id="personas">1</span>
+        <button type="button" onclick="changePeople(1)">+</button>
+      </div>
+
+      <button type="button" onclick="saveData()">
+        Confirmar
+      </button>
+
+      <button type="button" class="close" onclick="closeModal()">
+        Cancelar
+      </button>
+    </div>
+  </div>
+
+   <!-- MODAL NO -->
+<div class="modal" id="modalNo">
+  <div class="modal-content">
+    <h2>Te extrañaremos</h2>
+
+    <p>
+      Lamentamos que no puedas acompañarnos en este día tan especial.
+      De todas maneras, gracias por recibir esta invitación con cariño.
+    </p>
+
+    <button type="button" onclick="goHome()">
+      Volver a la invitación
+    </button>
+  </div>
+</div>
+
+  <script src="script.js"></script>
 
 </body>
 
