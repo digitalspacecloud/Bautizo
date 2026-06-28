@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bautizo Alaia Victoria & Julián André</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PORTADA -->
+    <section class="hero">
+
+        <div class="overlay">
+
+            <div class="cross">✝</div>
+
+            <p>Con la bendición de Dios</p>
+
+            <h1>Bautizo de</h1>
+
+            <h2>
+                Alaia Victoria
+                <br>
+                &
+                <br>
+                Julián André
+            </h2>
+
+            <h3>Domingo 09 de Agosto</h3>
+
+            <button onclick="scrollToInfo()">
+                Ver invitación
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MENSAJE -->
+
+    <section class="message">
+
+        <h2>Una celebración especial</h2>
+
+        <p>
+            Con mucho amor queremos compartir este día tan importante
+            junto a nuestra familia y amigos.
+        </p>
+
+    </section>
+
+
+
+    <!-- DETALLES -->
+
+    <section class="details">
+
+        <h2>Detalles del evento</h2>
+
+        <div class="card">
+
+            <h3>⛪ Misa</h3>
+
+            <p><strong>Hora:</strong> 10:00 AM</p>
+
+            <p>Church of Saint Christopher and Saint Patrick</p>
+
+            <p>
+                3094 Albany Post Rd
+                <br>
+                Buchanan, NY 10511
+            </p>
+
+            <a target="_blank"
+                href="https://www.google.com/maps/search/?api=1&query=3094+Albany+Post+Rd+Buchanan+NY+10511">
+
+                Ver ubicación
+
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🎉 Recepción</h3>
+
+            <p><strong>Hora:</strong> 1:00 PM</p>
+
+            <p>Our Lady of Mt. Carmel Society</p>
+
+            <p>
+                155 Highland Ave
+                <br>
+                Verplanck NY 10596
+            </p>
+
+            <a target="_blank"
+                href="https://www.google.com/maps/search/?api=1&query=155+Highland+Ave+Verplanck+NY+10596">
+
+                Ver ubicación
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONFIRMACION -->
+
+    <section class="rsvp" id="confirmacion">
+
+        <h2>Confirma tu asistencia</h2>
+
+        <p>
+            Tu respuesta nos ayudará a preparar este día con mucho cariño.
+        </p>
+
+        <button onclick="openConfirm()">
+
+            Sí, asistiré
+
+        </button>
+
+        <button class="no" onclick="openNoConfirm()">
+
+            No podré asistir
+
+        </button>
+
+    </section>
+
+
+
+    <!-- PADRES -->
+
+    <section class="parents">
+
+        <p>Con cariño</p>
+
+        <h3>
+
+            Verónica Illescas
+            <br>
+            &
+            <br>
+            Darío Morales
+
+        </h3>
+
+    </section>
+
+
+
+
+    <!-- MODAL SI -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <h2>Confirmar asistencia</h2>
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre completo">
+
+            <label>
+
+                ¿Cuántas personas asistirán?
+
+            </label>
+
+            <div class="counter">
+
+                <button
+                    type="button"
+                    onclick="changePeople(-1)">
+
+                    -
+
+                </button>
+
+                <span id="personas">
+
+                    1
+
+                </span>
+
+                <button
+                    type="button"
+                    onclick="changePeople(1)">
+
+                    +
+
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                onclick="saveData()">
+
+                Confirmar
+
+            </button>
+
+            <button
+                type="button"
+                class="close"
+                onclick="closeModal()">
+
+                Cancelar
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- MODAL NO -->
+
+    <div class="modal" id="modalNo">
+
+        <div class="modal-content">
+
+            <h2>No asistiré</h2>
+
+            <input
+                type="text"
+                id="nombreNo"
+                placeholder="Nombre completo">
+
+            <button
+                type="button"
+                onclick="saveNoData()">
+
+                Enviar respuesta
+
+            </button>
+
+            <button
+                type="button"
+                class="close"
+                onclick="closeNoModal()">
+
+                Cancelar
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
