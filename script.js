@@ -8,6 +8,15 @@ function scrollToInfo() {
   });
 }
 
+function goHome() {
+  closeNoModal();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
 function openConfirm() {
   document.getElementById("modal").style.display = "flex";
 }
@@ -61,30 +70,4 @@ async function saveData() {
   document.getElementById("personas").textContent = personas;
 
   closeModal();
-}
-
-async function saveNoData() {
-  const nombre = document.getElementById("nombreNo").value.trim();
-
-  if (nombre === "") {
-    alert("Por favor escribe tu nombre.");
-    return;
-  }
-
-  const datos = {
-    nombre: nombre,
-    asistencia: "No",
-    personas: 0
-  };
-
-  await fetch(URL_SHEET, {
-    method: "POST",
-    mode: "no-cors",
-    body: JSON.stringify(datos)
-  });
-
-  alert("Gracias por responder.");
-
-  document.getElementById("nombreNo").value = "";
-  closeNoModal();
 }
