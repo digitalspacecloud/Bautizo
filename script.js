@@ -2,6 +2,19 @@ let personas = 1;
 
 const URL_SHEET = "https://script.google.com/macros/s/AKfycbxap5tBvoE2inbYs3lvyLC-uD6BnXFlLyaw35vQSUi7DQq7sU613dVHsJaAiU-bSmWE/exec";
 
+
+function openInvitation() {
+  const intro = document.getElementById("introScreen");
+
+  intro.classList.add("hide-intro");
+
+  setTimeout(() => {
+    intro.style.display = "none";
+  }, 1100);
+}
+
+
+
 function scrollToInfo() {
   document.getElementById("confirmacion").scrollIntoView({
     behavior: "smooth"
