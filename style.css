@@ -856,3 +856,39 @@ section,
   color: var(--gold-dark);
   font-weight: normal;
 }
+/* CORRECCIÓN CLICKS */
+
+.hide-intro {
+  pointer-events: none !important;
+}
+
+.wings-layer,
+.wing,
+section::before,
+section::after,
+.overlay::before,
+.card::before,
+.card::after,
+.carousel::before,
+button::before,
+a::before {
+  pointer-events: none !important;
+}
+
+button,
+a,
+input,
+.dot,
+.carousel-btn {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 100;
+}
+
+.modal {
+  z-index: 30000;
+}
+
+.modal-content {
+  z-index: 30001;
+}
