@@ -5,32 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bautizo Alaia Victoria & Julián André</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 
 <body>
 
+  <div class="intro-screen" id="introScreen">
+    <div class="envelope">
+      <div class="seal">✦</div>
+    </div>
 
-    <div class="intro-screen" id="introScreen">
-  <div class="envelope">
-    <div class="seal">✦</div>
+    <p>Con la bendición de Dios</p>
+
+    <button type="button" onclick="openInvitation()">
+      Abrir invitación
+    </button>
   </div>
 
-  <p>Con la bendición de Dios</p>
-
-  <button type="button" onclick="openInvitation()">
-    Abrir invitación
-  </button>
-</div>
-
-    <div class="wings-layer">
-  <span class="wing wing-1"></span>
-  <span class="wing wing-2"></span>
-  <span class="wing wing-3"></span>
-  <span class="wing wing-4"></span>
-  <span class="wing wing-5"></span>
-</div>
-
+  <div class="wings-layer">
+    <span class="wing wing-1"></span>
+    <span class="wing wing-2"></span>
+    <span class="wing wing-3"></span>
+    <span class="wing wing-4"></span>
+    <span class="wing wing-5"></span>
+  </div>
 
   <section class="hero">
     <div class="overlay">
@@ -49,58 +47,56 @@
       <p class="lastname">Morales Illescas</p>
 
       <div class="blessing-quote">
-  <span></span>
+        <span></span>
+        <p>
+          “Dios me dio la vida,<br>
+          y hoy me da Su bendición.”
+        </p>
+        <small>Con amor y gratitud</small>
+      </div>
 
-  <p>
-    “Dios me dio la vida,<br>
-    y hoy me da Su bendición.”
-  </p>
+      <div class="calendar-box">
+        <div class="calendar-top">Agosto</div>
 
-  <small>Con amor y gratitud</small>
-</div>
+        <div class="calendar-body">
+          <span>Domingo</span>
+          <strong>09</strong>
+          <small>2026</small>
+        </div>
+      </div>
 
-       
-<div class="calendar-box">
-  <div class="calendar-top">Agosto</div>
+      <div class="countdown">
+        <p>Faltan</p>
 
-  <div class="calendar-body">
-    <span>Domingo</span>
-    <strong>09</strong>
-    <small>2026</small>
-  </div>
-</div>
+        <div class="countdown-grid">
+          <div>
+            <strong id="days">00</strong>
+            <span>Días</span>
+          </div>
 
-<div class="countdown">
-  <p>Faltan</p>
+          <div>
+            <strong id="hours">00</strong>
+            <span>Horas</span>
+          </div>
 
-  <div class="countdown-grid">
-    <div>
-      <strong id="days">00</strong>
-      <span>Días</span>
+          <div>
+            <strong id="minutes">00</strong>
+            <span>Min</span>
+          </div>
+
+          <div>
+            <strong id="seconds">00</strong>
+            <span>Seg</span>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" onclick="scrollToInfo()">
+        Ver invitación
+      </button>
     </div>
-
-    <div>
-      <strong id="hours">00</strong>
-      <span>Horas</span>
-    </div>
-
-    <div>
-      <strong id="minutes">00</strong>
-      <span>Min</span>
-    </div>
-
-    <div>
-      <strong id="seconds">00</strong>
-      <span>Seg</span>
-    </div>
-  </div>
-</div>
-
-
-
   </section>
-
-  <section class="message">
+    <section class="message">
     <p class="section-label">Un día especial</p>
 
     <h2>Nos encantaría contar con tu presencia</h2>
@@ -128,8 +124,7 @@
         Buchanan, NY 10511
       </p>
 
-      <a
-        target="_blank"
+      <a target="_blank"
         href="https://www.google.com/maps/search/?api=1&query=3094+Albany+Post+Rd+Buchanan+NY+10511">
         Ver ubicación
       </a>
@@ -147,8 +142,7 @@
         Verplanck, NY 10596
       </p>
 
-      <a
-        target="_blank"
+      <a target="_blank"
         href="https://www.google.com/maps/search/?api=1&query=155+Highland+Ave+Verplanck+NY+10596">
         Ver ubicación
       </a>
@@ -190,59 +184,57 @@
       No podré asistir
     </button>
   </section>
+    <section class="gallery">
+    <p class="section-label">Momentos especiales</p>
 
-<!-- GALERÍA DE FOTOS -->
-<section class="gallery">
-  <p class="section-label">Momentos especiales</p>
+    <h2>Galería</h2>
 
-  <h2>Galería</h2>
+    <div class="carousel">
+      <button type="button" class="carousel-btn prev" onclick="moveSlide(-1)">
+        ‹
+      </button>
 
-  <div class="carousel">
-    <button type="button" class="carousel-btn prev" onclick="moveSlide(-1)">
-      ‹
-    </button>
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+          <img src="img/1.jpeg" alt="Alaia Victoria y Julián André">
+        </div>
 
-    <div class="carousel-track" id="carouselTrack">
-      
+        <div class="carousel-slide">
+          <img src="img/2.jpeg" alt="Alaia Victoria">
+        </div>
 
-      <div class="carousel-slide">
-        <img src="img/1.jpeg" alt="Alaia Victoria y Julián André">
+        <div class="carousel-slide">
+          <img src="img/3.jpeg" alt="Julián André">
+        </div>
       </div>
 
-      <div class="carousel-slide">
-        <img src="img/2.jpeg" alt="Alaia Victoria y Julián André">
-      </div>
+      <button type="button" class="carousel-btn next" onclick="moveSlide(1)">
+        ›
+      </button>
     </div>
 
-    <button type="button" class="carousel-btn next" onclick="moveSlide(1)">
-      ›
-    </button>
-  </div>
+    <div class="carousel-dots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+  </section>
 
-  <div class="carousel-dots">
-    <span class="dot active" onclick="goToSlide(0)"></span>
-    <span class="dot" onclick="goToSlide(1)"></span>
-    <span class="dot" onclick="goToSlide(2)"></span>
-  </div>
-</section>
+  <section class="kids-message">
+    <p class="section-label">Nuestros pequeños</p>
 
+    <div class="card">
+      <p>
+        Hoy damos gracias a Dios por la vida de
+        <strong>Alaia Victoria</strong> y <strong>Julián André</strong>.
+      </p>
 
+      <p>
+        Nos llena de alegría compartir con ustedes este momento tan especial.
+      </p>
+    </div>
+  </section>
 
-<section class="kids-message">
-  <p class="section-label">Nuestros pequeños</p>
-
-  <div class="card">
-    <p>
-      Hoy damos gracias a Dios por la vida de
-      <strong>Alaia Victoria</strong> y <strong>Julián André</strong>.
-    </p>
-
-    <p>
-      Nos llena de alegría compartir con ustedes este momento tan especial.
-    </p>
-  </div>
-</section>
-  
   <section class="parents">
     <p>Con cariño</p>
 
@@ -283,23 +275,22 @@
     </div>
   </div>
 
-   <!-- MODAL NO -->
-<div class="modal" id="modalNo">
-  <div class="modal-content">
-    <h2>Te extrañaremos</h2>
+  <div class="modal" id="modalNo">
+    <div class="modal-content">
+      <h2>Te extrañaremos</h2>
 
-    <p>
-      Lamentamos que no puedas acompañarnos en este día tan especial.
-      De todas maneras, gracias por recibir esta invitación con cariño.
-    </p>
+      <p>
+        Lamentamos que no puedas acompañarnos en este día tan especial.
+        De todas maneras, gracias por recibir esta invitación con cariño.
+      </p>
 
-    <button type="button" onclick="goHome()">
-      Volver a la invitación
-    </button>
+      <button type="button" onclick="goHome()">
+        Volver a la invitación
+      </button>
+    </div>
   </div>
-</div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=10"></script>
 
 </body>
 
