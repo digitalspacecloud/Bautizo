@@ -6,24 +6,35 @@
 
 :root {
   --ivory: #fbf7ef;
-  --cream: #f6efe4;
+  --cream: #fffaf3;
+  --cream-2: #f6efe4;
   --beige: #e8d8c2;
   --gold: #b89555;
+  --gold-light: #d9bd78;
   --gold-dark: #8c6a35;
   --text: #5f4a34;
-  --soft: rgba(184, 149, 85, 0.14);
+  --white-soft: rgba(255,255,255,.72);
+  --shadow: rgba(91,70,48,.14);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: Georgia, serif;
-  background: var(--ivory);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(217,189,120,.22), transparent 28%),
+    radial-gradient(circle at 90% 40%, rgba(184,149,85,.16), transparent 32%),
+    linear-gradient(180deg, #fffaf3, #f6efe4);
   color: var(--text);
+  overflow-x: hidden;
 }
 
-/* FONDO GENERAL */
+/* capa general */
 section {
   position: relative;
-  padding: 70px 24px;
+  padding: 76px 22px;
   text-align: center;
   overflow: hidden;
 }
@@ -33,24 +44,30 @@ section::before {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(var(--soft) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(184,149,85,.06) 25%, transparent 25%),
-    linear-gradient(225deg, rgba(184,149,85,.05) 25%, transparent 25%);
-  background-size: 22px 22px, 80px 80px, 80px 80px;
+    radial-gradient(rgba(184,149,85,.13) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(184,149,85,.045) 25%, transparent 25%);
+  background-size: 24px 24px, 90px 90px;
   opacity: .55;
   pointer-events: none;
 }
 
 section > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* PORTADA */
+.message,
+.details,
+.rsvp,
+.parents,
+.gift {
+  max-width: 680px;
+  margin: auto;
+}
 .hero {
   min-height: 100vh;
   background:
-    linear-gradient(rgba(255,255,255,.45), rgba(251,247,239,.90)),
+    linear-gradient(rgba(255,250,243,.35), rgba(251,247,239,.92)),
     url("fondo.jpg");
   background-size: cover;
   background-position: center;
@@ -60,30 +77,30 @@ section > * {
 }
 
 .overlay {
+  position: relative;
   width: 100%;
-  max-width: 620px;
-  padding: 42px 26px;
-  background: rgba(255, 250, 243, 0.72);
-  border: 1px solid rgba(184,149,85,.30);
-  border-radius: 34px;
-  box-shadow: 0 20px 50px rgba(85, 62, 36, .16);
-  backdrop-filter: blur(6px);
+  max-width: 640px;
+  padding: 44px 24px;
+  background: rgba(255,250,243,.74);
+  border: 1px solid rgba(184,149,85,.32);
+  border-radius: 36px;
+  box-shadow: 0 24px 60px rgba(76,56,32,.18);
+  backdrop-filter: blur(7px);
 }
 
-.message,
-.details,
-.rsvp,
-.parents,
-.gift {
-  max-width: 660px;
-  margin: auto;
+.overlay::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(184,149,85,.23);
+  border-radius: 28px;
+  pointer-events: none;
 }
 
-/* TEXTOS */
 .ornament {
-  font-size: 32px;
+  font-size: 34px;
   color: var(--gold);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   letter-spacing: 8px;
 }
 
@@ -92,9 +109,9 @@ section > * {
 .card-label {
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--gold-dark);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 h1 {
@@ -107,8 +124,8 @@ h2 {
   font-size: 44px;
   color: var(--gold);
   font-weight: normal;
-  margin-bottom: 22px;
   line-height: 1.15;
+  margin-bottom: 22px;
 }
 
 .hero h2 {
@@ -118,22 +135,15 @@ h2 {
 .hero h2 span,
 .parents h3 span {
   display: block;
-  font-size: 28px;
+  font-size: 27px;
   color: var(--gold-dark);
   margin: 8px 0;
 }
 
 h3 {
   font-size: 25px;
-  margin: 16px 0;
   font-weight: normal;
-}
-
-.lastname {
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 16px;
-  margin-top: 12px;
+  margin: 16px 0;
 }
 
 p {
@@ -141,35 +151,138 @@ p {
   line-height: 1.75;
 }
 
-.date-box {
-  margin: 30px auto 12px;
-  padding: 22px 20px;
-  max-width: 260px;
-  border-top: 1px solid rgba(184,149,85,.45);
-  border-bottom: 1px solid rgba(184,149,85,.45);
+.lastname {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 15px;
+  margin-top: 10px;
 }
 
-.date-box span {
+.blessing-quote {
+  margin: 28px auto 12px;
+  padding: 24px 18px;
+  max-width: 400px;
+  border-radius: 28px;
+  background: rgba(255,250,243,.62);
+  border: 1px solid rgba(184,149,85,.24);
+}
+
+.blessing-quote span::before {
+  content: "❦";
   display: block;
+  font-size: 28px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.blessing-quote p {
+  font-size: 21px;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+.blessing-quote small {
+  display: block;
+  margin-top: 12px;
+  color: var(--gold-dark);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+/* Calendario */
+.calendar-box {
+  width: 235px;
+  margin: 30px auto 22px;
+  background: var(--cream);
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(184,149,85,.36);
+  box-shadow: 0 16px 38px rgba(91,70,48,.16);
+}
+
+.calendar-top {
+  background: linear-gradient(135deg, #c9a75f, #9b7335);
+  color: white;
+  padding: 13px;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 14px;
 }
 
-.date-box strong {
+.calendar-body {
+  padding: 23px 20px 27px;
+}
+
+.calendar-body span {
   display: block;
-  font-size: 64px;
-  color: var(--gold);
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.calendar-body strong {
+  display: block;
+  font-size: 76px;
   line-height: 1;
+  color: var(--gold);
+  font-weight: normal;
+  margin: 8px 0;
+}
+
+.calendar-body small {
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+/* Contador */
+.countdown {
+  margin: 22px auto 12px;
+  max-width: 370px;
+}
+
+.countdown p {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold-dark);
+  margin-bottom: 12px;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.countdown-grid div {
+  background: rgba(255,250,243,.84);
+  border: 1px solid rgba(184,149,85,.26);
+  border-radius: 18px;
+  padding: 13px 6px;
+  box-shadow: 0 9px 20px rgba(91,70,48,.09);
+}
+
+.countdown-grid strong {
+  display: block;
+  color: var(--gold);
+  font-size: 29px;
   font-weight: normal;
 }
 
-/* BOTONES */
+.countdown-grid span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 button,
 a {
   display: inline-block;
+  position: relative;
+  overflow: hidden;
   margin: 14px 6px 0;
-  background: linear-gradient(135deg, #c8a761, #9f7938);
+  background: linear-gradient(135deg, #c9a75f, #9b7335);
   color: white;
   border: none;
   padding: 14px 28px;
@@ -178,13 +291,31 @@ a {
   font-size: 16px;
   font-family: Georgia, serif;
   cursor: pointer;
-  box-shadow: 0 8px 18px rgba(121, 87, 36, .20);
+  box-shadow: 0 9px 20px rgba(121,87,36,.22);
+  transition: .3s ease;
 }
 
 button:hover,
 a:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 22px rgba(121, 87, 36, .24);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(121,87,36,.28);
+}
+
+button::before,
+a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -90%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
+  transition: .7s;
+}
+
+button:hover::before,
+a:hover::before {
+  left: 120%;
 }
 
 .no {
@@ -192,7 +323,6 @@ a:hover {
   color: #5c4630;
 }
 
-/* TARJETAS */
 .card {
   position: relative;
   background:
@@ -204,11 +334,11 @@ a:hover {
       transparent 1px,
       transparent 14px
     );
-  padding: 34px 28px;
-  margin: 28px 0;
-  border-radius: 28px;
-  border: 1px solid rgba(184,149,85,.28);
-  box-shadow: 0 14px 34px rgba(91, 70, 48, .10);
+  padding: 36px 28px;
+  margin: 30px 0;
+  border-radius: 30px;
+  border: 1px solid rgba(184,149,85,.30);
+  box-shadow: 0 16px 38px rgba(91,70,48,.12);
 }
 
 .card::before {
@@ -216,17 +346,41 @@ a:hover {
   position: absolute;
   inset: 12px;
   border: 1px solid rgba(184,149,85,.18);
-  border-radius: 22px;
+  border-radius: 23px;
   pointer-events: none;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border-top: 1px solid rgba(184,149,85,.35);
+  border-right: 1px solid rgba(184,149,85,.35);
+  border-radius: 0 14px 0 0;
 }
 
 .card p {
   margin-top: 10px;
 }
 
+.message h2::after,
+.details h2::after,
+.rsvp h2::after,
+.gift h2::after {
+  content: "";
+  display: block;
+  width: 78px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 18px auto 0;
+}
+
 .gift .card {
   background:
-    linear-gradient(rgba(37, 48, 67, .90), rgba(37, 48, 67, .90)),
+    linear-gradient(rgba(41, 49, 62, .92), rgba(41, 49, 62, .92)),
     repeating-linear-gradient(
       45deg,
       rgba(255,255,255,.05) 0,
@@ -242,17 +396,38 @@ a:hover {
   color: #e7c987;
 }
 
-.parents h3 {
-  color: var(--gold);
-  font-weight: normal;
+.rsvp {
+  background:
+    linear-gradient(rgba(251,247,239,.86), rgba(251,247,239,.86)),
+    radial-gradient(circle at center, rgba(184,149,85,.20), transparent 60%);
+  border-top: 1px solid rgba(184,149,85,.18);
+  border-bottom: 1px solid rgba(184,149,85,.18);
 }
 
+.parents {
+  background:
+    linear-gradient(rgba(255,250,243,.88), rgba(255,250,243,.88)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(184,149,85,.06) 0,
+      rgba(184,149,85,.06) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+}
+
+.parents h3 {
+  color: var(--gold);
+  font-size: 34px;
+  line-height: 1.25;
+  font-weight: normal;
+}
 /* MODALES */
 .modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(39, 31, 22, .58);
+  background: rgba(39,31,22,.58);
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -260,6 +435,7 @@ a:hover {
 }
 
 .modal-content {
+  animation: popElegant .28s ease;
   background:
     linear-gradient(rgba(255,250,243,.96), rgba(255,250,243,.96)),
     repeating-linear-gradient(
@@ -270,8 +446,8 @@ a:hover {
       transparent 14px
     );
   width: 100%;
-  max-width: 400px;
-  padding: 34px 26px;
+  max-width: 405px;
+  padding: 36px 26px;
   border-radius: 30px;
   text-align: center;
   border: 1px solid rgba(184,149,85,.28);
@@ -279,7 +455,7 @@ a:hover {
 }
 
 .modal-content h2 {
-  font-size: 40px;
+  font-size: 39px;
 }
 
 input {
@@ -326,15 +502,99 @@ label {
   box-shadow: none;
 }
 
-/* CELULAR */
+@keyframes popElegant {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* PLUMAS / LUZ SUTIL */
+.wings-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 6;
+}
+
+section,
+.overlay,
+.card,
+.modal,
+.modal-content {
+  position: relative;
+}
+
+.overlay,
+.card,
+.modal-content {
+  z-index: 12;
+}
+
+.wing {
+  position: absolute;
+  width: 90px;
+  height: 18px;
+  opacity: 0;
+  border-radius: 100%;
+  background:
+    linear-gradient(90deg, transparent, rgba(255,255,255,.75), rgba(217,189,120,.22), transparent);
+  filter: blur(.4px);
+  animation: featherFly 36s linear infinite;
+}
+
+.wing::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 7px;
+  width: 50px;
+  height: 1px;
+  background: rgba(184,149,85,.24);
+  transform: rotate(-8deg);
+}
+
+.wing-1 { top: 8%; left: -120px; animation-delay: 0s; }
+.wing-2 { top: 26%; left: -130px; animation-delay: 7s; transform: scale(.8); }
+.wing-3 { top: 48%; left: -140px; animation-delay: 14s; transform: scale(1.1); }
+.wing-4 { top: 68%; left: -150px; animation-delay: 21s; transform: scale(.75); }
+.wing-5 { top: 84%; left: -160px; animation-delay: 28s; transform: scale(.95); }
+
+@keyframes featherFly {
+  0% {
+    transform: translateX(-160px) translateY(0) rotate(-12deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: .22;
+  }
+  35% {
+    transform: translateX(40vw) translateY(-32px) rotate(10deg);
+  }
+  65% {
+    transform: translateX(75vw) translateY(24px) rotate(-8deg);
+    opacity: .18;
+  }
+  100% {
+    transform: translateX(120vw) translateY(-12px) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
 @media (max-width: 480px) {
   section {
-    padding: 56px 18px;
+    padding: 58px 18px;
   }
 
   .overlay {
     padding: 36px 20px;
-    border-radius: 28px;
+    border-radius: 30px;
   }
 
   h2 {
@@ -352,6 +612,14 @@ label {
   button,
   a {
     width: 100%;
-    max-width: 280px;
+    max-width: 285px;
+  }
+
+  .countdown-grid {
+    gap: 8px;
+  }
+
+  .countdown-grid strong {
+    font-size: 24px;
   }
 }
