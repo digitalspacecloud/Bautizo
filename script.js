@@ -111,3 +111,43 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+let currentSlide = 0;
+
+function updateCarousel() {
+  const track = document.getElementById("carouselTrack");
+  const dots = document.querySelectorAll(".dot");
+
+  if (!track) return;
+
+  track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("active", index === currentSlide);
+  });
+}
+
+function moveSlide(direction) {
+  const totalSlides = document.querySelectorAll(".carousel-slide").length;
+
+  currentSlide += direction;
+
+  if (currentSlide < 0) {
+    currentSlide = totalSlides - 1;
+  }
+
+  if (currentSlide >= totalSlides) {
+    currentSlide = 0;
+  }
+
+  updateCarousel();
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  updateCarousel();
+}
+
+setInterval(() => {
+  moveSlide(1);
+}, 5000);
